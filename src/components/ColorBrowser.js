@@ -1,17 +1,19 @@
 import Slider from "./Slider"
+import Output from "./Output"
 import React, { useState } from 'react'
 
 export default function ColorBrowser () {
 
-    const [red, setRed] = useState(0)
-    const [blue, setBlue] = useState(0)
-    const [yellow, setYellow] = useState(0)
-
+    const [colorValues, setVal] = useState({"red": 0, "blue": 0, "green": 0})
+    function updateColors (name, value) {
+        setVal({...colorValues, [name]: value})
+    }
     return (
-        <div>
-            <Slider name="red" val={red} set={setRed} />
-            <Slider name="blue" val={blue} set={setBlue} />
-            <Slider name="yellow" val={yellow} set={setYellow} />
+        <div className="space-y-5 mx-auto container">
+            <Slider name="red" val={colorValues.red} set={updateColors} />
+            <Slider name="green" val={colorValues.green} set={updateColors} />
+            <Slider name="blue" val={colorValues.blue} set={updateColors} />
+            <Output values={colorValues} />
         </div>
     )
 }
