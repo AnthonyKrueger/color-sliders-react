@@ -6,7 +6,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <ColorBrowser />
+      <div className="grid grid-cols-3">
+        <ColorBrowser />
+        <ColorBrowser />
+        <ColorBrowser />
+        <ColorBrowser />
+        <ColorBrowser />
+        <ColorBrowser />
+      </div>
     </div>
   );
 }

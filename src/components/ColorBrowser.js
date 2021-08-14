@@ -9,7 +9,7 @@ export default function ColorBrowser () {
         setVal({...colorValues, [name]: value})
     }
     return (
-        <div className="space-y-5 mx-auto container">
+        <div className="space-y-5 my-5 px-3 container">
             <Slider name="red" val={colorValues.red} set={updateColors} />
             <Slider name="green" val={colorValues.green} set={updateColors} />
             <Slider name="blue" val={colorValues.blue} set={updateColors} />
